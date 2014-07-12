@@ -1,4 +1,4 @@
-<%= simple_form_for @job , :url => preview_jobs_path,  html: { class: 'form-horizontal' } , :wrapper => :horizontal_form,  :wrapper_mappings => {    check_boxes: :horizontal_radio_and_checkboxes,    radio_buttons: :horizontal_radio_and_checkboxes,    file: :horizontal_file_input,    boolean: :horizontal_boolean } do |f| %>
+<%= simple_form_for @job , :url =>  preview_jobs_path , :method => :post,  html: { class: 'form-horizontal' } , :wrapper => :horizontal_form,  :wrapper_mappings => {    check_boxes: :horizontal_radio_and_checkboxes,    radio_buttons: :horizontal_radio_and_checkboxes,    file: :horizontal_file_input,    boolean: :horizontal_boolean } do |f| %>
 
        <h4 class="instruction"> &nbsp; &nbsp;&nbsp;第一步，告訴我們詳細資訊 </h4>
 
@@ -26,6 +26,7 @@
     <%= f.input :url, :label => "URL" %>
     <%= f.input :email, :hint => "This is where we’ll send your receipt and confirmation email." %>
 
+    <%= f.input :token, :as => :hidden, :valie => @job.token if !@job.new_record? %>
 <hr>
 
 <div class="form-group text optional job_description">
