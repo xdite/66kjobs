@@ -1,5 +1,25 @@
-<h1>New job</h1>
 
-<%= render 'form' %>
+
+<div class="new-job">
+
+  <p class="new-job-desc">
+    你張貼的工作會在這個網站上停留三十天，三十天過後這個徵才啟事會過期，你可以隨時再回來重新張貼你的工作廣告。
+  </p>  
+
+  <br><br>
+
+  <h3> STEP 1 : 撰寫工作內容 </h3>
+
+  <hr>
+
+  <h4 class="instruction"> 第一步，告訴我們詳細資訊 </h4>
+
+<br><br>
+
+  <%= render 'form' %>
+
+
+</div>
+
 
 <%= link_to 'Back', jobs_path %>

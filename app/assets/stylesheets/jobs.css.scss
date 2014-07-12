@@ -1,3 +1,13 @@
-// Place all the styles related to the jobs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new-job{
+  padding: 15px;
+
+  .instruction{
+    color: #c00;
+  }
+}
+.new-job-desc{
+
+  font-size: 20px;
+  font-weight: strong; 
+}
