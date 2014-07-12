@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   resources :jobs do 
     collection do 
       get :inform
+      post :preview
     end
+
+
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

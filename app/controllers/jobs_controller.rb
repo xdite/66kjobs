@@ -23,6 +23,11 @@ class JobsController < ApplicationController
   def edit
   end
 
+
+  def preview
+    @job = Job.new(job_params)
+  end
+
   # POST /jobs
   # POST /jobs.json
   def create
@@ -71,6 +76,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:title, :description, :user_id)
+      params.require(:job).permit(:title, :description, :location , :company_name, :category_id , :apply_instruction)
     end
 end
