@@ -3,18 +3,7 @@
 
 <% @categories.each do |category| %>
 
-  <h3> <%= category.name %> </h3>
 
-  <table class="table table-borderd">
-    <% category.jobs.each do |job| %>
-      <tr>
-        <td width="90%">
-          <%= render_job_title(job) %>
-        </td>
-  
-        <td> <%= job.created_on.to_s(:short) %> </td>
-      </tr>
 
-    <% end %>
-  </table>
+  <%= render :partial => "category_block", :locals => { :category => category} %>
 <% end %>
