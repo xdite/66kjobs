@@ -31,6 +31,13 @@ class Job < ActiveRecord::Base
   include Tokenable
 
   validates :title, :presence => true
+  validates :description, :presence => true
+  validates :location, :presence => true
+  validates :company_name, :presence => true
+  
+  validates :url, :url => true
+  
+  validates :email, :email => true
 
   validate :check_salary, fields: [:lower_bound, :higher_bound]
 

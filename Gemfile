@@ -35,7 +35,8 @@ gem "faker"
 
 gem "ransack"
 gem "fontawesome-rails"
-
+gem "validate_url"
+gem 'email_validator'
 gem "will_paginate"
 
 group :development do 
