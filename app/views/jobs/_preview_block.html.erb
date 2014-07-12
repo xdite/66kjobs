@@ -1,0 +1,22 @@
+
+  <h2> <%= @job.title %> </h2>
+
+  <h4> <%= @job.company_name %> </h4>
+
+  <h4> 上班地點： <%= @job.location %> </h4>
+
+  <br>
+
+  <p>
+    <%= render_job_description(@job.description) %>
+  </p>
+
+  <br>
+
+  <div class="well">
+    <h4> 應徵方法 </h4>
+    <p>
+      <%= render_job_description(@job.apply_instruction) %>
+    </p>
+
+  </div>

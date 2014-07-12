@@ -1,19 +1,17 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @job.title %>
-</p>
+<div class="job-nav-bar">
+  <%= link_to("← 回工作列表", root_path, :class => "underline") %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @job.description %>
-</p>
+    <%= link_to("看更多 #{@job.category.name} 的工作 →", category_path(@job.category) , :class => "underline pull-right") %>
 
-<p>
-  <strong>User:</strong>
-  <%= @job.user_id %>
-</p>
+</div>
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+<div class="job-content">
+
+
+  <%= render :partial => "jobs/preview_block" %>
+
+</div>
+
+See more Programming jobs →
+← Back to all jobs

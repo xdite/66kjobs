@@ -17,7 +17,7 @@
 <br>
 
   <div style="text-align:left;">
-    <%= link_to("確定刊登本廣告", publish_job_path(@job.token), :method => :post, :confirm => "Are you sure? " , :class => "btn btn-large btn-danger") %> or <%= link_to("回去做些小改動", new_job_path(:token => @job.token) , :class => "underline" )%>
+    <%= link_to("確定刊登本廣告", publish_job_path(@job.token), :method => :post, :confirm => "Are you sure? " , :class => "btn btn-large btn-danger") %> or <%= link_to("回去做些小改動", new_job_path(:token => @job.token) , :class => "underline red" )%>
 
   </div>
 

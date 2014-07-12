@@ -1,7 +1,7 @@
 module JobsHelper
 
   def render_job_title(job)
-    job.title
+    link_to(job.title, job_path(job))
   end
 
 

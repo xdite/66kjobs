@@ -1,17 +1,13 @@
 class JobsController < ApplicationController
 
-
-#  before_action :login_required, :only => [:create, :new, :update, :edit, :destroy]
-
-  # GET /jobs
-  # GET /jobs.json
   def index
-    @jobs = Job.all
+    @categories = Category.all
   end
 
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+    @job = Job.find(params[:id])
   end
 
   # GET /jobs/new

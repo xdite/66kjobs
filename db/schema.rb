@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20140712133445) do
     t.integer  "category_id",       default: 1
     t.string   "location"
     t.text     "apply_instruction"
+    t.date     "created_on"
+    t.date     "update_on"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "company_name"
