@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require bootstrap/dropdown
 //= require bootstrap/alert
+//= require bootstrap/modal
