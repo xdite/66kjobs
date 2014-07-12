@@ -1,0 +1,25 @@
+<div class="new-job">
+
+  <h3> STEP 3 : 確定張貼廣告 </h3>
+
+  <hr>
+
+
+<div class="well">
+
+  <ul>
+    <li> 你的廣告會在本站首頁上停留三十天（從現在算起）。 </li>
+    <li> 一則廣告只允許公告一個職缺 </li>
+    <li> 我們保留將廣告徹架的權利 </li>
+    <li> 如有任何疑問，請來信 66kjobs.tw@gmail.com </li>
+  </ul>
+
+<br>
+
+  <div style="text-align:left;">
+    <%= link_to("確定刊登本廣告", publish_job_path(@job.token), :method => :post, :confirm => "Are you sure? " , :class => "btn btn-large btn-danger") %> or <%= link_to("回去做些小改動", new_job_path(:token => @job.token) , :class => "underline" )%>
+
+  </div>
+
+
+</div>

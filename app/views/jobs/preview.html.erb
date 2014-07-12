@@ -5,7 +5,7 @@
   <h3> STEP 2 : 預覽你的徵才廣告 </h3>
 
   <div style="text-align:right;">
-    <%= link_to("看起來很不錯，繼續前進到步驟 3 ", "#" , :class => "btn btn-large btn-danger") %> or <%= link_to("回去做些小改動", new_job_path(:token => @job.token) , :class => "underline" )%>
+    <%= link_to("看起來很不錯，繼續前進到步驟 3 ", final_jobs_path(:token => @job.token ) , :class => "btn btn-large btn-danger") %> or <%= link_to("回去做些小改動", new_job_path(:token => @job.token) , :class => "underline" )%>
 
   </div>
   <hr>
@@ -39,7 +39,7 @@
   <hr>
 
   <div style="text-align:left;">
-    <%= link_to("看起來很不錯，繼續前進到步驟 3 ", "#" , :class => "btn btn-large btn-danger") %> or <%= link_to("回去做些小改動", new_job_path(:token => @job.token) , :class => "underline" )%>
+    <%= link_to("看起來很不錯，繼續前進到步驟 3 ", final_jobs_path(:token => @job.token ) , :class => "btn btn-large btn-danger") %> or <%= link_to("回去做些小改動", new_job_path(:token => @job.token) , :class => "underline" )%>
 
   </div>
 

@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20140712133445) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
+    t.integer  "jobs_count", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

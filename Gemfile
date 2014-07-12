@@ -31,6 +31,8 @@ gem "bootstrap-sass"
 
 gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
 
+gem "faker"
+
 group :development do 
   gem "better_errors"
   gem "annotate"
