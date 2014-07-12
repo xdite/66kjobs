@@ -32,8 +32,15 @@
     <%= f.input :url, :label => "URL" %>
     <%= f.input :email, :hint => "This is where we’ll send your receipt and confirmation email." %>
 
+<hr>
+<div class="form-group text optional job_description">
+  <label class="text optional col-sm-1 control-label" for="job_description"></label>
+  <div class="col-sm-11">
+      <%= f.submit "預覽徵才啟事" , :class => "btn btn-lg btn-danger" %>
+  </div>
+</div>
 
-  <%= f.button :submit %>
+
 <% end %>
 
 
