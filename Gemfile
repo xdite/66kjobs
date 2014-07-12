@@ -29,7 +29,7 @@ gem 'spring',        group: :development
 gem "devise"
 gem "bootstrap-sass"
 
-gem "simple_form"
+gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
 
 group :development do 
   gem "better_errors"

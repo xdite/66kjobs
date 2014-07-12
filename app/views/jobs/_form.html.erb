@@ -1,9 +1,14 @@
-<%= simple_form_for @job  do |f| %>
+<%= simple_form_for @job ,  :wrapper => :horizontal_form,  :wrapper_mappings => {    check_boxes: :horizontal_radio_and_checkboxes,    radio_buttons: :horizontal_radio_and_checkboxes,    file: :horizontal_file_input,    boolean: :horizontal_boolean } do |f| %>
 
 
 <div class="form-group">
 
-    <%= f.input :company_name, :input_html => { :class => "col-lg-4"}, :label => "公司 / 組織名稱", :hint => "Enter your company or organization’s name." %>
+    <%= f.input :title, :label => "Job Title", :hint => "“Senior Designer” or “Rails Programmer”" %>
+
+
+    <%= f.input :category, :collection => Category.all.map{ |c| [c.name, c.id] },    as: :radio_buttons %>
+
+    <%= f.input :company_name, :input_html => { :class => "col-lg-4"}, :label => "公司 / 組織名稱", :hint => "Enter your company or organization’s name."%>
 
     <%= f.input :url, :label => "URL" %>
     <%= f.input :email, :hint => "This is where we’ll send your receipt and confirmation email." %>
