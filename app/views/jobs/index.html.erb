@@ -1,9 +1,8 @@
-<%= link_to 'New Job', inform_jobs_path, :remote => true %>
+
+<%= render :partial => "jobs/search_bar" %>
 
 
 <% @categories.each do |category| %>
 
-
-
-  <%= render :partial => "category_block", :locals => { :category => category} %>
+<%= render :partial => "category_block", :locals => { :category => category} %>
 <% end %>

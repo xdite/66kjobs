@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     collection do 
       get :inform
       post :preview
-
+      get :search
       get :final
     end
 

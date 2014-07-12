@@ -27,9 +27,11 @@ namespace :dev do
     job = c.jobs.new
 
     job.title = Faker::Lorem.sentence
+
     job.description = Faker::Lorem.paragraph(2)
     job.apply_instruction = Faker::Lorem.paragraph(2) + Faker::Internet.email
     job.location = Faker::Address.city
+    job.company_name = "#{Faker::Name.first_name} Inc."
     job.email = Faker::Internet.email
     job.url = Faker::Internet.url
 

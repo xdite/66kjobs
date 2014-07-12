@@ -1,0 +1,9 @@
+
+<%= render :partial => "jobs/search_bar" %>
+
+<div class="search-result">
+
+   <%= render :partial => "jobs/item", :collection => @jobs, :as => :job %>
+  
+   <%= @jobs.inspect %>
+</div>

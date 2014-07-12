@@ -1,5 +1,7 @@
 class JobsController < ApplicationController
 
+  before_filter :validate_search_key , :only => [:search]
+  
   def index
     @categories = Category.all
   end
@@ -8,6 +10,9 @@ class JobsController < ApplicationController
   # GET /jobs/1.json
   def show
     @job = Job.find(params[:id])
+  end
+
+  def search
   end
 
   # GET /jobs/new
@@ -62,11 +67,31 @@ class JobsController < ApplicationController
   end
 
 
-  private
-
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def job_params
-      params.require(:job).permit(:title, :description, :location , :company_name, :category_id , :apply_instruction, :url, :email)
+  def search
+    if @query_string.present?
+      search_result = Job.ransack(@search_criteria).result(:distinct => true)
+      @jobs = search_result.paginate(:page => params[:page], :per_page => 20 )
     end
   end
+  
+
+  protected
+
+  def validate_search_key
+    @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
+    @search_criteria = search_criteria(@query_string)
+  end
+
+
+  def search_criteria(query_string)
+    { :title_or_description_or_email_or_location_cont => query_string }
+  end
+
+
+
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def job_params
+    params.require(:job).permit(:title, :description, :location , :company_name, :category_id , :apply_instruction, :url, :email)
+  end
+end
