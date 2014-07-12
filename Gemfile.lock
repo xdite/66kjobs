@@ -29,6 +29,8 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
+    bootstrap-sass (3.1.1.1)
+      sass (~> 3.2)
     builder (3.2.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -92,6 +94,9 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
+    simple_form (3.0.2)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
     spring (1.1.3)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -123,6 +128,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
   coffee-rails (~> 4.0.0)
   devise
   jbuilder (~> 2.0)
@@ -130,6 +136,7 @@ DEPENDENCIES
   rails (= 4.1.1)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  simple_form
   spring
   sqlite3
   turbolinks
