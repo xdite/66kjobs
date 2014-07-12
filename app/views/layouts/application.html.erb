@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>AwesomeJob</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <title> ArtStore </title>
+
 </head>
 <body>
 
-<%= yield %>
+  <div class="container">
 
+    <%= render "common/navbar" %>
+
+    <%= notice_message %>
+    
+    <%= yield %>
+
+  </div>
 </body>
 </html>
