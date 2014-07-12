@@ -23,7 +23,8 @@ SimpleForm.setup do |config|
   config.wrappers :prepend_append, :tag => 'div', :class => "form-group", :error_class => 'has-error' do |b|
     b.use :html5
     b.use :placeholder
-    b.use :label
+    b.use :label, class: 'col-sm-2 control-label'
+
     b.wrapper :tag => 'div', :class => 'controls' do |input|
       input.wrapper :tag => 'div', :class => 'input-prepend input-append' do |pa|
         pa.use :input

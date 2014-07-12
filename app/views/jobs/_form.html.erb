@@ -13,7 +13,7 @@
     <%= f.input :category_id, :collection => @categories ,    as: :radio_buttons, :checked => @categories[0] %>
 
 
-     <%= f.input :lower_bound, :label => 'Postal code, house number', :wrapper => :prepend_append do  %>
+     <%= f.input :lower_bound, :label => '薪水', :wrapper => :prepend_append do  %>
          <%= f.input_field :lower_bound %>
          <%= f.input_field :higher_bound %>
      <% end %>
