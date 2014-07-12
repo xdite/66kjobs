@@ -5,6 +5,7 @@ class CreateJobs < ActiveRecord::Migration
       t.text :description
       t.integer :user_id
       t.integer :category_id , :default => 1
+      t.string :location
       t.timestamps
     end
   end
