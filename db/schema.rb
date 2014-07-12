@@ -23,7 +23,9 @@ ActiveRecord::Schema.define(version: 20140712120458) do
     t.string   "title"
     t.text     "description"
     t.integer  "user_id"
-    t.integer  "category_id",  default: 1
+    t.integer  "category_id",       default: 1
+    t.string   "location"
+    t.text     "apply_instruction"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "company_name"
