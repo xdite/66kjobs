@@ -34,6 +34,7 @@ namespace :dev do
     job.company_name = "#{Faker::Name.first_name} Inc."
     job.email = Faker::Internet.email
     job.url = Faker::Internet.url
+    job.is_published = true
 
     job.save
   end

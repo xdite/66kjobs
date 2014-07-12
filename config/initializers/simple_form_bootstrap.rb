@@ -20,7 +20,20 @@ SimpleForm.setup do |config|
     end
   end
 
- config.wrappers :horizontal_file_input, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
+  config.wrappers :prepend_append, :tag => 'div', :class => "form-group", :error_class => 'has-error' do |b|
+    b.use :html5
+    b.use :placeholder
+    b.use :label
+    b.wrapper :tag => 'div', :class => 'controls' do |input|
+      input.wrapper :tag => 'div', :class => 'input-prepend input-append' do |pa|
+        pa.use :input
+      end
+      input.use :error, wrap_with: { tag: 'span', class: 'help-block' }
+      input.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
+    end
+  end
+
+  config.wrappers :horizontal_file_input, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
     b.use :html5
     b.use :placeholder
     b.use :label, class: 'col-sm-2 control-label'

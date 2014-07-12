@@ -34,9 +34,14 @@ ActiveRecord::Schema.define(version: 20140712133445) do
     t.string   "company_name"
     t.string   "url"
     t.string   "email"
+    t.integer  "lower_bound"
+    t.integer  "higher_bound"
     t.string   "token"
     t.boolean  "is_published"
   end
+
+  add_index "jobs", ["is_published"], name: "index_jobs_on_is_published"
+  add_index "jobs", ["token"], name: "index_jobs_on_token"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

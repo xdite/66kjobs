@@ -1,5 +1,8 @@
 <%= simple_form_for @job , :url =>  preview_jobs_path , :method => :post,  html: { class: 'form-horizontal' } , :wrapper => :horizontal_form,  :wrapper_mappings => {    check_boxes: :horizontal_radio_and_checkboxes,    radio_buttons: :horizontal_radio_and_checkboxes,    file: :horizontal_file_input,    boolean: :horizontal_boolean } do |f| %>
 
+
+
+
        <h4 class="instruction"> &nbsp; &nbsp;&nbsp;第一步，告訴我們詳細資訊 </h4>
 
 
@@ -8,6 +11,13 @@
     <% @categories = Category.all.map{ |c| [c.name, c.id] } %>
   
     <%= f.input :category_id, :collection => @categories ,    as: :radio_buttons, :checked => @categories[0] %>
+
+
+     <%= f.input :lower_bound, :label => 'Postal code, house number', :wrapper => :prepend_append do  %>
+         <%= f.input_field :lower_bound %>
+         <%= f.input_field :higher_bound %>
+     <% end %>
+
 
     <%= f.input :location, :label => "工作地點", :hint => "“Chicago, IL”, “Stockholm, Sweden”" %>
 

@@ -1,9 +1,11 @@
 
 <%= render :partial => "jobs/search_bar" %>
 
+<br>
 <div class="search-result">
 
+  <table class="table table-borderd">
    <%= render :partial => "jobs/item", :collection => @jobs, :as => :job %>
-  
-   <%= @jobs.inspect %>
+ </table>
+
 </div>

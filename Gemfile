@@ -36,6 +36,8 @@ gem "faker"
 gem "ransack"
 gem "fontawesome-rails"
 
+gem "will_paginate"
+
 group :development do 
   gem "better_errors"
   gem "annotate"
