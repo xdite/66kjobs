@@ -4,7 +4,7 @@ class CreateJobs < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.integer :user_id
-
+      t.integer :category_id , :default => 1
       t.timestamps
     end
   end

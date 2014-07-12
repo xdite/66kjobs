@@ -5,6 +5,5 @@ class CreateCategories < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_column :jobs, :category_id, :integer
   end
 end
