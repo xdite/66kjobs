@@ -1,3 +1,22 @@
+<div class="stepwizard">
+    <div class="stepwizard-row">
+        <div class="stepwizard-step">
+          <%= link_to("1", new_job_path(:token => @job.token), :class => "btn btn-default btn-circle") %>
+      
+            <p>張貼工作內容</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-default btn-circle" disabled="disabled">2</button>
+            <p>預覽</p>
+        </div>
+        <div class="stepwizard-step">
+          <%= link_to("3", final_jobs_path(:token => @job.token ), :class => "btn btn-primary btn-circle") %>
+            <p>確定張貼</p>
+        </div> 
+    </div>
+</div>
+
+
 <div class="new-job">
 
   <h3> STEP 3 : 確定張貼廣告 </h3>

@@ -54,7 +54,7 @@ class Job < ActiveRecord::Base
       errors.add(:lower_bound, "最低薪不能超過 30000")
     end
 
-    if lower_bound.to_i < 60000
+    if higher_bound.to_i < 60000
       errors.add(:lower_bound, "最高薪要超過 66000")
     end
 

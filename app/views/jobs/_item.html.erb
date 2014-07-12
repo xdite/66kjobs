@@ -1,7 +1,9 @@
      <tr>
-        <td width="90%">
-          <%= render_job_title(job) %>
+        <td width="80%">
+          <%= render_job_fresh_state(job) %> <%= render_job_title(job) %>
         </td>
-  
+        <td width="5%">
+          <%= render_job_salary(job) %>
+        </td>
         <td> <%= job.created_on.to_s(:short) %> </td>
       </tr>
