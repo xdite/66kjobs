@@ -30,6 +30,11 @@ gem "devise"
 gem "bootstrap-sass"
 
 gem "simple_form"
+
+group :development do 
+  gem "better_errors"
+  gem "annotate"
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
