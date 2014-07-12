@@ -6,7 +6,7 @@
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <title> ArtStore </title>
+  <title> 66K Jobs </title>
 
 </head>
 <body>
@@ -18,6 +18,8 @@
     <%= notice_message %>
     
     <%= yield %>
+
+    <%= render :partial => "common/bootstrap_modal" %>
 
   </div>
 </body>
