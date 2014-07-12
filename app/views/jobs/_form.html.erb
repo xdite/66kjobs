@@ -3,11 +3,7 @@
        <h4 class="instruction"> &nbsp; &nbsp;&nbsp;第一步，告訴我們詳細資訊 </h4>
 
 
-       <br><br>
-
-
     <%= f.input :title, :label => "Job Title", :hint => "“Senior Designer” or “Rails Programmer”" %>
-
 
     <% @categories = Category.all.map{ |c| [c.name, c.id] } %>
   
@@ -20,11 +16,9 @@
     <%= f.input :apply_instruction, :label => "如何應徵", :hint => "Example: Send a resume to jane@company.com" , :input_html => { :rows => 3 } %>
 
 
-
     <h4 class="instruction"> &nbsp; &nbsp;&nbsp;介紹你的公司 </h4>
 
-
-       <br><br>
+    <br><br>
 
 
     <%= f.input :company_name, :input_html => { :class => "col-lg-4"}, :label => "公司 / 組織名稱", :hint => "Enter your company or organization’s name."%>
@@ -33,6 +27,7 @@
     <%= f.input :email, :hint => "This is where we’ll send your receipt and confirmation email." %>
 
 <hr>
+
 <div class="form-group text optional job_description">
   <label class="text optional col-sm-1 control-label" for="job_description"></label>
   <div class="col-sm-11">

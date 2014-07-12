@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140712120458) do
+ActiveRecord::Schema.define(version: 20140712133445) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20140712120458) do
     t.string   "company_name"
     t.string   "url"
     t.string   "email"
+    t.string   "token"
+    t.boolean  "is_published"
   end
 
   create_table "users", force: true do |t|
