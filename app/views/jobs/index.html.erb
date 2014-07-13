@@ -1,8 +1,22 @@
 
+<div class="well landing">
+
+  <h2> 66 K 工作網 </h2>
+
+  <div class="desc">
+    <p>
+
+      <strong> <%= link_to("66 K 工作網", "/", :class => "underline") %></strong> 是一個提供 66K+ 新台幣的工作機會網站。
+     
+     </p>
+    <p> 我們希望藉由這個網站，能讓大家找到且應徵上高薪且優質的工作。 憑藉自己的努力和天份也會變 Winner。</p>
+  </div>
+</div>
+
 <%= render :partial => "jobs/search_bar" %>
 
 
 <% @categories.each do |category| %>
 
-  <%= render :partial => "category_block", :locals => { :category => category } %>
+<%= render :partial => "category_block", :locals => { :category => category } %>
 <% end %>
