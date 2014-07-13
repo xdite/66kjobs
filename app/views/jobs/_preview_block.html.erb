@@ -7,6 +7,10 @@
 
   <h4> 公司地點： <%= @job.location %> </h4>
 
+  <h4> 
+    薪水 : <%= render_job_salary(@job.lower_bound)%>  ~ <%= render_job_salary(@job.higher_bound)%>
+  </h4>
+
   <%= render_job_url(@job) %>
   <hr>
 

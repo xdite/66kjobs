@@ -18,16 +18,16 @@ module JobsHelper
     link_to(job.url, job.url) 
   end
 
-  def render_job_salary(job)
-    higer_price = job.higher_bound
-    special_label = if job.higher_bound > 200000
+  def render_job_salary(salary)
+
+    special_label = if salary > 200000
       "label-danger"
-    elsif job.higher_bound > 100000
+    elsif salary > 100000
       "label-success"
     else
       ""
     end
-    content_tag(:span, "新台幣 $#{job.higher_bound} 元", :class => "label label-default #{special_label}")
+    content_tag(:span, "新台幣 $#{salary} 元", :class => "label label-default #{special_label}")
   end
 
   def render_job_fresh_state(job)
