@@ -1,19 +1,19 @@
 SEO:
-  ☐ install seo_helper
-  ☐ install opengraph_helper
+  ✔ install seo_helper @done (14-07-13 22:25)
+  ✔ install opengraph_helper @done (14-07-13 22:25)
 
 
 Basic: 
 
-   ☐  Posting Job
+   ✔  Posting Job @done (14-07-13 22:25)
 
 Refine:
   ☐ move modal to central
-  ☐ url should validate & present
+  ✔ url should validate & present @done (14-07-13 22:25)
   ☐ replace category desc
 
 Custmer:
   ☐ payment
-  ☐ email sending
+  ✔ email sending @done (14-07-13 22:25)
 
 
