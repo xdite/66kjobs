@@ -62,12 +62,11 @@ class JobsController < ApplicationController
 
     ip_count = Job.count(:created_on => Date.today, :publish => true, :ip => request.ip )
 
-    if ip_count > 1
-      flash[:error] = "一天不能張貼超過一則資訊"
-    else
-      @job.publish!
-  
-    end
+   # if ip_count > 1
+   #   flash[:error] = "一天不能張貼超過一則資訊"
+   # else
+      PublishJobService.new(@job).perform! 
+   # end
 
     redirect_to root_path
   end
