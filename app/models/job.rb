@@ -34,9 +34,8 @@ class Job < ActiveRecord::Base
   validates :title, :presence => true
   validates :description, :presence => true
   validates :location, :presence => true
-  validates :company_name, :presence => true
   
-  validates :url, :url => true
+  validates :url, :url => true, :allow_blank => true
   
   validates :email, :email => true
 

@@ -3,7 +3,7 @@
 
   <span style="color:grey; font-weight:bold;"> <%= @job.created_on.to_s(:short) %> </span>
 
-  <h4> <%= @job.company_name %> </h4>
+  <h4> <%= render_job_company_name(@job) %> </h4>
 
   <h4> 公司地點： <%= @job.location %> </h4>
 
