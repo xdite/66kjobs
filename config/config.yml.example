@@ -8,6 +8,7 @@ defaults: &defaults
   mailgun:
     api_key: "your mailgun here"
     api_host: 66kjobs.tw
+    email_sender: "yourmail@company.com"    
 development:
   <<: *defaults
 test:

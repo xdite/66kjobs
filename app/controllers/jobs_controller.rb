@@ -30,9 +30,7 @@ class JobsController < ApplicationController
     end
   end
 
-  # GET /jobs/1/edit
-  def edit
-  end
+
 
 
   def preview
@@ -55,6 +53,21 @@ class JobsController < ApplicationController
     end
 
   end
+
+  def edit
+    @job = Job.find_by_token(params[:id])
+  end
+
+  def update
+    @job = Job.find_by_token(params[:id])
+    if @job.update(job_params_for_edit)
+      flash[:notice] = "修改成功"
+      redirect_to job_path(@job)
+    else
+      render :new
+    end
+  end
+
 
   def publish
     @job = Job.find_by_token(params[:id])
@@ -103,5 +116,9 @@ class JobsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def job_params
     params.require(:job).permit(:lower_bound, :higher_bound, :title, :description, :location , :company_name, :category_id , :apply_instruction, :url, :email)
+  end
+
+  def job_params_for_edit
+    params.require(:job).permit(:is_published,:lower_bound, :higher_bound, :title, :description, :location , :company_name, :category_id , :apply_instruction, :url, :email)
   end
 end
