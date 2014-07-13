@@ -1,0 +1,9 @@
+defaults: &defaults
+  app_secret_key: 'device secret key here'
+development:
+  <<: *defaults
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

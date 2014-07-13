@@ -39,9 +39,21 @@ gem "validate_url"
 gem 'email_validator'
 gem "will_paginate"
 
+gem "settingslogic"
+
 group :development do 
+
+  gem "letter_opener"
+  gem "capistrano", "2.15.5"
+  gem "capistrano-ext"
+  gem "rvm-capistrano"
+  gem "cape"
   gem "better_errors"
   gem "annotate"
+end
+
+group :production do 
+  gem "mysql2"
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
