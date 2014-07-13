@@ -23,6 +23,8 @@
 #
 
 class Job < ActiveRecord::Base
+
+
   belongs_to :user
   belongs_to :category, :counter_cache => true
 
@@ -30,6 +32,7 @@ class Job < ActiveRecord::Base
   scope :recent, -> { order("id DESC") }
 
   include Tokenable
+  include ActionView::Helpers::TextHelper
 
   validates :title, :presence => true
   validates :description, :presence => true
@@ -40,6 +43,22 @@ class Job < ActiveRecord::Base
   validates :email, :email => true
 
   validate :check_salary, fields: [:lower_bound, :higher_bound]
+
+
+  def og_description
+    content = []
+    content << description if description.present?
+    
+
+    str = truncate(content.first, :length => 150 )
+
+    ERB::Util.h(str)
+  end
+
+  def og_title
+    ERB::Util.h("#{title} - #{company_name} - 最高薪水 #{higher_bound}")
+  end
+
 
   def check_salary
     if lower_bound.blank? 

@@ -11,8 +11,8 @@ class JobsController < ApplicationController
   def show
     @job = Job.find(params[:id])
 
-    set_page_title "#{@job.title} - #{@job.company_name} - 最高薪水 #{@job.higher_bound}"
-    set_page_description view_context.truncate(@job.description.to_markdown, :length => 200 )
+    set_page_title @job.og_title
+    set_page_description @job.og_description
   end
 
 
