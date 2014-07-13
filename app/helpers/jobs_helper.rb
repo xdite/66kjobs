@@ -22,7 +22,7 @@ module JobsHelper
 
     special_label = if salary > 200000
       "label-danger"
-    elsif salary > 100000
+    elsif salary >= 100000
       "label-success"
     else
       ""
