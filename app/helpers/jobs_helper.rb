@@ -6,7 +6,12 @@ module JobsHelper
 
 
   def render_job_description(job)
-    simple_format(job)
+    job.description.to_markdown
+  end
+
+
+  def render_job_apply_instruction(job)
+    job.apply_instruction.to_markdown
   end
 
   def render_job_url(job)

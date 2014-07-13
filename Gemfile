@@ -42,6 +42,8 @@ gem "will_paginate"
 gem "settingslogic"
 gem "rails_admin"
 
+gem "ultra_markdown"
+
 group :development do 
   gem "letter_opener"
   gem "capistrano", "2.15.5"

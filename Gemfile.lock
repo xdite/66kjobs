@@ -37,6 +37,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     addressable (2.3.6)
+    airbrake (4.0.0)
+      builder
+      multi_json
     annotate (2.6.3)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
@@ -65,6 +68,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.1)
+    crass (0.2.0)
     devise (3.2.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -121,6 +125,8 @@ GEM
       net-ssh (>= 2.6.5)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
+    nokogumbo (1.1.9)
+      nokogiri
     orm_adapter (0.5.0)
     polyamorous (1.0.0)
       activerecord (>= 3.0)
@@ -155,6 +161,8 @@ GEM
       remotipart (~> 1.0)
       safe_yaml (~> 1.0)
       sass-rails (~> 4.0)
+    rails_autolink (1.1.6)
+      rails (> 3.1)
     railties (4.1.1)
       actionpack (= 4.1.1)
       activesupport (= 4.1.1)
@@ -169,10 +177,16 @@ GEM
       polyamorous (~> 1.0.0)
     rdoc (4.1.1)
       json (~> 1.4)
+    redcarpet (3.1.2)
     remotipart (1.2.1)
+    rouge (1.5.0)
     rvm-capistrano (1.5.1)
       capistrano (~> 2.15.4)
     safe_yaml (1.0.3)
+    sanitize (3.0.0)
+      crass (~> 0.2.0)
+      nokogiri (>= 1.4.4)
+      nokogumbo (= 1.1.9)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -207,6 +221,13 @@ GEM
     uglifier (2.5.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    ultra_markdown (0.4)
+      airbrake
+      nokogiri
+      rails_autolink
+      redcarpet
+      rouge
+      sanitize
     validate_url (0.2.2)
       activemodel (>= 3.0.0)
       addressable
@@ -245,5 +266,6 @@ DEPENDENCIES
   sqlite3
   turbolinks
   uglifier (>= 1.3.0)
+  ultra_markdown
   validate_url
   will_paginate
