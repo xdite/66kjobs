@@ -37,9 +37,9 @@ class Job < ActiveRecord::Base
   validates :title, :presence => true
   validates :description, :presence => true
   validates :location, :presence => true
-  
+
   validates :url, :url => true, :allow_blank => true
-  
+
   validates :email, :email => true
 
   validate :check_salary, fields: [:lower_bound, :higher_bound]
@@ -48,7 +48,7 @@ class Job < ActiveRecord::Base
   def og_description
     content = []
     content << description if description.present?
-    
+
 
     str = truncate(content.first, :length => 150 )
 
@@ -61,7 +61,7 @@ class Job < ActiveRecord::Base
 
 
   def check_salary
-    if lower_bound.blank? 
+    if lower_bound.blank?
       errors.add(:lower_bound, "最低薪水不能為空")
     end
 
@@ -77,7 +77,7 @@ class Job < ActiveRecord::Base
       errors.add(:lower_bound, "最高薪要超過 66000")
     end
 
-    if lower_bound > higher_bound
+    if lower_bound.to_i > higher_bound.to_i
       errors.add(:lower_bound, "最高薪要能超過最低薪")
     end
 
