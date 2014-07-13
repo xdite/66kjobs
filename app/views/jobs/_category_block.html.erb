@@ -2,6 +2,6 @@
   
   <table class="table table-borderd">
 
-    <%= render :partial => "jobs/item", :collection => category.jobs.published , :as => :job %>
+    <%= render :partial => "jobs/item", :collection => category.jobs.published.recent , :as => :job %>
   
   </table>
