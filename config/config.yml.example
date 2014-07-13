@@ -1,9 +1,14 @@
 defaults: &defaults
   app_secret_key: 'device secret key here'
+  app_name: "66K 工作網"
+  domain: "http://awesome-job.dev"
 development:
   <<: *defaults
 test:
   <<: *defaults
 
+
 production:
   <<: *defaults
+  env_secret: "modify_here"
+  domain: "http://66kjobs.tw"
