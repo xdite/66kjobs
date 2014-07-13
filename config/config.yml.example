@@ -4,6 +4,7 @@ defaults: &defaults
   domain: "http://awesome-job.dev"
   facebook_app_id: 710686532311958
   google_analytics_key: UA-52771099-1
+  default_og_url:
 development:
   <<: *defaults
 test:
