@@ -1,29 +1,30 @@
 
-  <h2> <%= @job.title %> </h2>
+<h2> <%= @job.title %> @ <%= render_job_company_name(@job) %> </h2>
 
-  <span style="color:grey; font-weight:bold;"> <%= @job.created_on.to_s(:short) %> </span>
+<div class="group">
+  <span style="color:grey; font-weight:bold;"> <i class="glyphicon glyphicon-calendar"> </i> 刊登日期 <%= @job.created_on.to_s(:long) %> </span>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <span style="color:grey; font-weight:bold;"> <i class="glyphicon glyphicon-map-marker"></i> 上班地點 <%= @job.location %> </span>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <span style="color:grey; font-weight:bold;" class="pull-right"> <%= render_job_salary(@job.lower_bound)%>  ~ <%= render_job_salary(@job.higher_bound)%> </span>
+</div>
 
-  <h4> <%= render_job_company_name(@job) %> </h4>
 
-  <h4> 公司地點： <%= @job.location %> </h4>
 
-  <h4> 
-    薪水 : <%= render_job_salary(@job.lower_bound)%>  ~ <%= render_job_salary(@job.higher_bound)%>
-  </h4>
+<hr>
 
-  <%= render_job_url(@job) %>
-  <hr>
-
+<div class="job-desc">
   <p>
     <%= render_job_description(@job) %>
   </p>
 
-  <br>
+</div>
+<br>
 
-  <div class="well">
-    <h4> 應徵方法 </h4>
-    <p>
-      <%= render_job_apply_instruction(@job) %>
-    </p>
+<div class="well">
+  <h4> 應徵方法 </h4>
+  <p>
+    <%= render_job_apply_instruction(@job) %>
+  </p>
 
-  </div>
+</div>

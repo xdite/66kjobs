@@ -59,6 +59,13 @@ class Job < ActiveRecord::Base
     ERB::Util.h("#{title} - #{company_name} - 最高薪水 #{higher_bound}")
   end
 
+  def company_human_name
+    if company_name.present?
+      company_name
+    else
+       "（匿名）"
+    end
+  end
 
   def check_salary
     if lower_bound.blank? 

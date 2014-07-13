@@ -39,10 +39,10 @@ module JobsHelper
   end
 
   def render_job_company_name(job)
-    if job.company_name.present?
-      job.company_name
+    if job.url.present?
+      link_to(job.company_human_name, job.url, :target => "_blank")
     else
-      "（匿名）"
+      job.company_human_name
     end
   end
 end
