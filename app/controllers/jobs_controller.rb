@@ -10,6 +10,8 @@ class JobsController < ApplicationController
   # GET /jobs/1.json
   def show
     @job = Job.find(params[:id])
+
+    set_page_title "#{@job.title} - #{@job.company_name} - 最高薪水 #{@job.higher_bound}"
   end
 
   def search
