@@ -12,6 +12,8 @@
  *
  *= require_self
  *= require bootstrap
+ *= require bootstrap-markdown
+ *= require bootstrap-override
  *= require jobs
  */
 
@@ -51,3 +53,5 @@
 .group {
    zoom: 1; /* IE6&7 */
 }
+
+

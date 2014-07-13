@@ -19,7 +19,7 @@
 
     <%= f.input :location, :label => "工作地點", :hint => "臺北 / 高雄 / 上海 / ...etc." %>
 
-    <%= f.input :description, :label => "工作敘述", :input_html => { :rows => 10 }, :hint => "使用 Markdown 語法" %>
+    <%= f.input :description, :label => "工作敘述", :input_html => { :rows => 10, :data => { :provide => "markdown"} }, :hint => "使用 Markdown 語法" %>
 
     <%= f.input :apply_instruction, :label => "如何應徵", :hint => "Example: Send a resume to hr@mycompany.com" , :input_html => { :rows => 3 } %>
 

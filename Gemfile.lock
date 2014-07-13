@@ -161,6 +161,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.1)
       sprockets-rails (~> 2.0)
+    rails-bootstrap-markdown (1.0.0)
     rails_admin (0.6.2)
       builder (~> 3.1)
       coffee-rails (~> 4.0)
@@ -276,6 +277,7 @@ DEPENDENCIES
   mysql2
   open_graph_helper
   rails (= 4.1.1)
+  rails-bootstrap-markdown
   rails_admin
   ransack
   rvm-capistrano
