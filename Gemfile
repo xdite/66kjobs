@@ -41,6 +41,8 @@ gem "will_paginate"
 
 gem "settingslogic"
 gem "rails_admin"
+gem "seo_helper"
+gem "open_graph_helper"
 
 gem "ultra_markdown"
 
