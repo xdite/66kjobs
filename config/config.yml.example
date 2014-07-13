@@ -3,6 +3,7 @@ defaults: &defaults
   app_name: "66K 工作網"
   domain: "http://awesome-job.dev"
   facebook_app_id: 710686532311958
+  google_analytics_key: UA-52771099-1
 development:
   <<: *defaults
 test:
