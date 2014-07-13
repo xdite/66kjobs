@@ -19,6 +19,24 @@ RailsAdmin.config do |config|
 
 
 
+  config.model 'Job' do
+    edit do
+      field :title
+      field :description
+      field :category_id
+      field :location
+      field :created_on
+      field :company_name
+      field :url
+      field :email
+      field :lower_bound
+      field :higher_bound
+      field :token
+      field :is_published
+   
+    end
+  end
+
   ## == Cancan ==
   # config.authorize_with :cancan
 
