@@ -46,6 +46,9 @@ gem "open_graph_helper"
 
 gem "ultra_markdown"
 
+gem 'mailgun-rails'
+gem 'mailgun', :git => "https://github.com/HashNuke/mailgun.git"
+
 group :development do 
   gem "letter_opener"
   gem "capistrano", "2.15.5"

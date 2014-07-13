@@ -5,6 +5,9 @@ defaults: &defaults
   facebook_app_id: 710686532311958
   google_analytics_key: UA-52771099-1
   default_og_url:
+  mailgun:
+    api_key: "your mailgun here"
+    api_host: 66kjobs.tw
 development:
   <<: *defaults
 test:
