@@ -47,6 +47,7 @@ class JobsController < ApplicationController
     else
 
       @job = Job.new(job_params)
+      @job.ip = request.remote_ip
 
       if !@job.save
         render :new
@@ -58,7 +59,15 @@ class JobsController < ApplicationController
   def publish
     @job = Job.find_by_token(params[:id])
 
-    @job.publish!
+
+    ip_count = Job.count(:created_on => Date.today, :publish => true, :ip => request.ip )
+
+    if ip_count > 1
+      flash[:error] = "一天不能張貼超過一則資訊"
+    else
+      @job.publish!
+  
+    end
 
     redirect_to root_path
   end

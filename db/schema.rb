@@ -41,6 +41,9 @@ ActiveRecord::Schema.define(version: 20140713130632) do
     t.string   "ip",                limit: 30
   end
 
+  add_index "jobs", ["created_on"], name: "index_jobs_on_created_on"
+  add_index "jobs", ["ip", "created_on"], name: "index_jobs_on_ip_and_created_on"
+  add_index "jobs", ["ip"], name: "index_jobs_on_ip"
   add_index "jobs", ["is_published"], name: "index_jobs_on_is_published"
   add_index "jobs", ["token"], name: "index_jobs_on_token"
 
