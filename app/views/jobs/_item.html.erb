@@ -1,6 +1,11 @@
      <tr>
-        <td width="80%">
-          <%= render_job_fresh_state(job) %> <%= render_job_title(job) %>
+         <td width="5%">
+          <%= render_job_fresh_state(job) %>
+         
+        </td>
+        <td width="75%">
+           <%= job.company_name %> -
+           <%= render_job_title(job) %>
         </td>
         <td width="5%">
           <%= render_job_salary(job.higher_bound) %>
