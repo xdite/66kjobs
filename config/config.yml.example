@@ -2,6 +2,7 @@ defaults: &defaults
   app_secret_key: 'device secret key here'
   app_name: "66K 工作網"
   domain: "http://awesome-job.dev"
+  facebook_app_id: 710686532311958
 development:
   <<: *defaults
 test:

@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <%= stylesheet_link_tag "application" %>
-  <%= javascript_include_tag "application" %>
 
   <%= render_page_title_tag %>
 
@@ -25,7 +24,12 @@
     
     <%= yield %>
 
+    <%= render :partial => "common/facebook_js" %>
     <%= render :partial => "common/bootstrap_modal" %>
+
+  <%= javascript_include_tag "application" %>
+
+  <%= yield :javascripts %>
 
   </div>
 </body>

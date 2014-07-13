@@ -8,20 +8,18 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active">
-          <%# link_to("Products", products_path) %>
-        </li>
 
+       <li>          <%= link_to("關於本站", "/pages/about") %>       </li>
       </ul>
 
 
 
       <ul class="nav navbar-nav navbar-right">
 
-        <li> 
-          <%= link_to("關於本站", "/pages/about") %>
-
-        </li>
+<li>
+      <div class="social"> <%=  fb_like(Setting.domain) %>  </div>
+</li>
+       
 
 
           </ul>
