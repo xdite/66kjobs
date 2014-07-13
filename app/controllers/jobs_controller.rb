@@ -12,10 +12,9 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
 
     set_page_title "#{@job.title} - #{@job.company_name} - 最高薪水 #{@job.higher_bound}"
+    set_page_description view_context.truncate(@job.description.to_markdown, :length => 200 )
   end
 
-  def search
-  end
 
   # GET /jobs/new
   def new
@@ -73,6 +72,7 @@ class JobsController < ApplicationController
     if @query_string.present?
       search_result = Job.ransack(@search_criteria).result(:distinct => true)
       @jobs = search_result.paginate(:page => params[:page], :per_page => 20 )
+      set_page_title "搜尋 #{@query_string}"
     end
   end
   
