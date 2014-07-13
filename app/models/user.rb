@@ -25,5 +25,9 @@ class User < ActiveRecord::Base
 
 
   has_many :jobs
-           
+      
+
+  def admin?
+    is_admin
+  end           
 end

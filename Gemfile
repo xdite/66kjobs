@@ -40,9 +40,9 @@ gem 'email_validator'
 gem "will_paginate"
 
 gem "settingslogic"
+gem "rails_admin"
 
 group :development do 
-
   gem "letter_opener"
   gem "capistrano", "2.15.5"
   gem "capistrano-ext"
@@ -51,6 +51,8 @@ group :development do
   gem "better_errors"
   gem "annotate"
 end
+
+
 
 group :production do 
   gem "mysql2"

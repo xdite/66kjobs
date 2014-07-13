@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/xadmin', as: 'rails_admin'
   devise_for :users
   root :to => "jobs#index"
   
