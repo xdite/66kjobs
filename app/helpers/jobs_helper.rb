@@ -34,6 +34,10 @@ module JobsHelper
   end
 
   def render_job_company_name(job)
-    job.company_name || "（匿名）"
+    if job.company_name.present?
+      job.company_name
+    else
+      "（匿名）"
+    end
   end
 end
