@@ -73,7 +73,7 @@ class JobsController < ApplicationController
     @job = Job.find_by_token(params[:id])
 
 
-    ip_count = Job.count(:created_on => Date.today, :publish => true, :ip => request.ip )
+    ip_count = Job.where(:created_on => Date.today, :is_published => true, :ip => request.ip ).count
 
     if ip_count > 1
       flash[:error] = "一天不能張貼超過一則資訊"
