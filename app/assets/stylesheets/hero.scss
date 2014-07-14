@@ -1,4 +1,4 @@
-$fg-color: transparentize(white, .05);
+$fg-color: transparentize(white, .1);
 $bg-color: transparentize(#433226, .6);
 
 .hero-block {
@@ -24,13 +24,16 @@ $bg-color: transparentize(#433226, .6);
 
   .hero-inner {
     color: $fg-color;
-    text-shadow: 0 1px 1px black;
+    text-shadow: 0 0 5px rgba(0,0,0,.75);
     padding: 60px 30px;
     position: relative;
   }
 
   .hero-title {
     margin-top: 0;
+  }
+  .lead:last-child {
+    margin-bottom: 0;
   }
 
   @media screen and (min-width: 992px) {
