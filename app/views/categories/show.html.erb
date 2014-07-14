@@ -1,1 +1,3 @@
-  <%= render :partial => "jobs/category_block", :locals => { :category => @category} %>
+<h3> <%= @category.name %> </h3>  
+
+<%= render_cell :category, :jobs, :category => @category %>
