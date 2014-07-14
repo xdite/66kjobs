@@ -9,7 +9,7 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
-    @job = Job.find(params[:id])
+    @job = Job.published.find(params[:id])
 
     set_page_title @job.og_title
     set_page_description @job.og_description
