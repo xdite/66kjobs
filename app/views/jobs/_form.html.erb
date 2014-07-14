@@ -9,13 +9,13 @@
     <%= f.input :title, :label => "Job Title", :hint => "“Senior Designer” or “Rails Programmer”" %>
 
     <% @categories = Category.all.map{ |c| [c.name, c.id] } %>
-  
+
     <%= f.input :category_id, :collection => @categories ,    as: :radio_buttons, :checked => @categories[1] %>
 
 
      <%= f.input :lower_bound , :label => '薪水', :wrapper => :prepend_append do  %>
-         <%= f.input_field :lower_bound, :as => :string %>
-         <%= f.input_field :higher_bound, :as => :string %>
+         <%= f.input_field :lower_bound, :as => :string, placeholder: '下限 (Lower bound)' %> ~
+         <%= f.input_field :higher_bound, :as => :string, placeholder: '上限 (Higher bound)' %>
      <% end %>
 
 
@@ -48,7 +48,3 @@
 
 
 <% end %>
-
-
-
-
