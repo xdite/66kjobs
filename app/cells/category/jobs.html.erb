@@ -1,0 +1,8 @@
+  <h3> <%= @category.name %> </h3>
+  
+  <table class="table table-borderd">
+
+
+    <%= render :partial => "jobs/item", :collection => @jobs , :as => :job %>
+  
+  </table>

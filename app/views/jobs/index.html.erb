@@ -18,5 +18,5 @@
 
 <% @categories.each do |category| %>
 
-<%= render :partial => "category_block", :locals => { :category => category } %>
+  <%= render_cell :category, :jobs, :category => category %>
 <% end %>
