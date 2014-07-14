@@ -33,6 +33,8 @@ gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 
 
 gem "faker"
 
+gem "cells"
+
 gem "ransack"
 gem "fontawesome-rails"
 gem "validate_url"
