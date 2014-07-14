@@ -33,7 +33,7 @@ RailsAdmin.config do |config|
       field :higher_bound
       field :token
       field :is_published
-   
+      field :ip
     end
   end
 
