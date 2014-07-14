@@ -15,8 +15,30 @@
 
 <%= render :partial => "jobs/search_bar" %>
 
+<br>
 
-<% @categories.each do |category| %>
+<div class="bs-example bs-example-tabs">
+    <ul id="myTab" class="nav nav-tabs" role="tablist">
+      <% @categories.each_with_index do |category, i| %>
+      <% active_flag = "active" if i == 1 %>
 
-  <%= render_cell :category, :jobs, :category => category %>
-<% end %>
+        <%= content_tag :li , :class => active_flag do %>
+     
+          <%= link_to(category.name, "#category-#{i}", :data => { :toggle => :tab } ) %>
+        <% end %> 
+      <% end %>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+
+      <% @categories.each_with_index do |category, i| %>
+      <% active_flag = "active" if i == 1 %>
+
+        <%= content_tag :div , :class => "#{active_flag} tab-pane fade in", :id => "category-#{i}" do %>
+     
+           <h3> <%= link_to(category.name, category_path(category), :style => "color: black;") %> </h3>  
+          <%= render_cell :category, :jobs, :category => category %>
+        <% end %> 
+      <% end %>
+    </div>
+  </div>
+
