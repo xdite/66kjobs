@@ -6,7 +6,7 @@ module JobsHelper
 
 
   def render_job_description(job)
-    job.description.to_markdown
+    sanitize(job.description.to_markdown)
   end
 
 
