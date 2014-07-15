@@ -1,5 +1,6 @@
-$fg-color: transparentize(white, .1);
-$bg-color: transparentize(#433226, .6);
+$bg-shadow-color: #433226;
+$fg-color: white;
+$bg-color: transparentize($bg-shadow-color, .7);
 
 .hero-block {
   background: url("/images/bkg-hero.jpg") no-repeat center 45%;
@@ -24,7 +25,7 @@ $bg-color: transparentize(#433226, .6);
 
   .hero-inner {
     color: $fg-color;
-    text-shadow: 0 0 5px rgba(0,0,0,.75);
+    text-shadow: 0 0 5px transparentize($bg-shadow-color, .25);
     padding: 60px 30px;
     position: relative;
   }
@@ -32,8 +33,19 @@ $bg-color: transparentize(#433226, .6);
   .hero-title {
     margin-top: 0;
   }
-  .lead:last-child {
-    margin-bottom: 0;
+
+  .lead {
+    line-height: 1.6;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .lead {
+      font-size: 18px;
+    }
   }
 
   @media screen and (min-width: 992px) {
@@ -52,7 +64,7 @@ $bg-color: transparentize(#433226, .6);
     min-height: 450px;
 
     .hero-inner {
-      bottom: 45px;
+      bottom: 60px;
     }
   }
 }
