@@ -28,9 +28,8 @@ class MailingListMember
         :subscribed => subscribed,
         :upsert => true
       )
-      return true
+
     end
-    return false
   end
 
   def subscribed?

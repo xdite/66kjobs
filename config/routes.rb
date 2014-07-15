@@ -15,12 +15,12 @@ Rails.application.routes.draw do
     member do 
       post :publish
     end
-
-
   end
 
   resources :categories
-  
+
+  resources :subscriptions
+    
   get "/pages/:action" , :controller => "pages"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
