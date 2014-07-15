@@ -29,8 +29,15 @@
       <% active_flag = "active" if i == 1 %>
 
         <%= content_tag :div , :class => "#{active_flag} tab-pane fade in", :id => "category-#{i}" do %>
-     
-           <h3> <%= link_to(category.name, category_path(category), :style => "color: black;") %> </h3>  
+  
+           <div class="pull-right">
+            <%= link_to(image_tag("rss-feed.png"), category_path(category, params.merge(:format => :rss) )) %>
+          </div>
+   
+      
+           <h3> <%= link_to(category.name, category_path(category), :style => "color: black;") %> <%= link_to(image_tag("rss-feed.png"), category_path(category, params.merge(:format => :rss) )) %> </h3>  
+
+
           <%= render_cell :category, :jobs, :category => category %>
         <% end %> 
       <% end %>
