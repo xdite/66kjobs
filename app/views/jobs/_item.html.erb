@@ -2,8 +2,10 @@
 
   <td width="80%">
     <%= render_job_fresh_state(job) %>
+
     <%= job.company_human_name %> -
     <%= render_job_title(job) %>
+    <%= render_job_warning(@job.lower_bound) %>
   </td>
   <td width="5%">
     <%= render_job_salary(job.higher_bound) %>
