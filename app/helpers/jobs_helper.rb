@@ -15,7 +15,7 @@ module JobsHelper
   end
 
   def render_job_url(job)
-    link_to(job.url, job.url) 
+    link_to(job.url, job.url)
   end
 
   def render_job_salary(salary)
@@ -30,7 +30,7 @@ module JobsHelper
 
     salary = number_to_currency(salary, precision: 0)
 
-    content_tag(:span, "新台幣 $#{salary} 元", :class => "label label-default #{special_label}")
+    content_tag(:span, "新台幣 #{salary} 元", :class => "label label-default #{special_label}")
   end
 
   def render_job_fresh_state(job)
