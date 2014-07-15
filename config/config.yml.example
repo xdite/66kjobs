@@ -12,6 +12,7 @@ defaults: &defaults
     newspaper_email: "" 
 development:
   <<: *defaults
+  env_secret:
 test:
   <<: *defaults
 
