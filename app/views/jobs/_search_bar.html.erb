@@ -1,25 +1,21 @@
 
-<div class="container">
-  <div class="row">    
-    <div class="col-xs-8 col-xs-offset-2">
+<div class="row">
+  <div class="col-sm-9 col-lg-8 col-lg-offset-2">
+    <%= form_tag search_jobs_path , :method => :get, :class => "jobs-search-form" do %>
+      <div class="input-group">
+        <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="搜尋工作關鍵字...">
 
-      <%= form_tag search_jobs_path , :method => :get do %>
-
-      <div class="input-group">    
-        <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="Search term...">
         <span class="input-group-btn">
-
-             <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-
-     
+          <button type="submit" class="btn btn-default">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
         </span>
       </div>
+    <% end %>
+  </div>
 
-      <% end %>
-
-
-    </div>
-
-    <%= link_to '張貼一份 66K+ 工作' , inform_jobs_path, :remote => true, :class => "btn btn-primary btn-large" %>
+  <div class="col-sm-3 col-lg-2">
+    <%= link_to '張貼一份 66K+ 工作' , inform_jobs_path, :remote => true, :class => "btn btn-primary btn-block" %>
   </div>
 </div>
+

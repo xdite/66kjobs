@@ -1,0 +1,71 @@
+$bg-shadow-color: #433226;
+$fg-color: white;
+$bg-color: transparentize($bg-shadow-color, .7);
+
+.hero-block {
+  background: url("/images/bkg-hero.jpg") no-repeat center 45%;
+  background-size: cover;
+  position: relative;
+  margin-bottom: 30px;
+
+  a {
+    color: $fg-color;
+    text-decoration: underline;
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: $bg-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .hero-inner {
+    color: $fg-color;
+    text-shadow: 0 0 5px transparentize($bg-shadow-color, .25);
+    padding: 60px 30px;
+    position: relative;
+  }
+
+  .hero-title {
+    margin-top: 0;
+  }
+
+  .lead {
+    line-height: 1.6;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .lead {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    height: 380px;
+
+    .hero-inner {
+      width: 40%;
+      padding: 0;
+      position: absolute;
+      left: 30px;
+      bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    min-height: 450px;
+
+    .hero-inner {
+      bottom: 60px;
+    }
+  }
+}
+

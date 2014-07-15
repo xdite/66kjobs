@@ -1,3 +1,6 @@
+.jobs-search-form {
+  margin-bottom: 15px;
+}
 
 .new-job{
   padding: 15px;
@@ -9,7 +12,7 @@
 .new-job-desc{
 
   font-size: 20px;
-  font-weight: strong; 
+  font-weight: strong;
 }
 
 .landing .desc p{
@@ -18,7 +21,7 @@
 
 
 .stepwizard-step p {
-    margin-top: 10px;    
+    margin-top: 10px;
 }
 
 .stepwizard-row {
@@ -26,7 +29,7 @@
 }
 
 .stepwizard {
-    display: table;     
+    display: table;
     width: 100%;
     position: relative;
 }
@@ -45,10 +48,10 @@
     height: 1px;
     background-color: #ccc;
     z-order: 0;
-    
+
 }
 
-.stepwizard-step {    
+.stepwizard-step {
     display: table-cell;
     text-align: center;
     position: relative;
