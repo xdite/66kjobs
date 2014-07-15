@@ -31,7 +31,7 @@ gem "bootstrap-sass"
 
 gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
 
-gem "faker"
+gem "xdite"
 
 gem "cells"
 
