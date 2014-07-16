@@ -23,6 +23,7 @@ RailsAdmin.config do |config|
     edit do
       field :title
       field :description
+      field :apply_instruction
       field :category_id
       field :location
       field :created_on
