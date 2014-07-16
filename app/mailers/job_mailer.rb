@@ -1,6 +1,6 @@
 class JobMailer < ActionMailer::Base
 
-  default from: "\"66Kjobs\" #{Setting.email_sender}"
+  default from: "\"66Kjobs\" #{Setting.mailgun.email_sender}"
 
   def deliver_email_for_edit(job)
     @job = job
