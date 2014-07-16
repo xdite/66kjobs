@@ -28,7 +28,7 @@ class Job < ActiveRecord::Base
   belongs_to :user
   belongs_to :category, :counter_cache => true
 
-  scope :published,  -> { where(:is_published => true ) }
+  scope :published,  -> { where(:is_published => true ).where(:email_confirmed => true ) }
   scope :recent, -> { order("id DESC") }
 
   include Tokenable
@@ -89,6 +89,16 @@ class Job < ActiveRecord::Base
       errors.add(:lower_bound, "最高薪要能超過最低薪")
     end
 
+  end
+
+  def verified?
+    email_confirmed_at.present? && email_confirmed
+  end
+
+  def verify!
+    self.email_confirmed_at = Time.now
+    self.email_confirmed = true
+    self.save
   end
 
   def publish!

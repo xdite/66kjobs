@@ -77,15 +77,20 @@ class JobsController < ApplicationController
 
     redirect_to root_path
 
-  #  ip_count = Job.where(:created_on => Date.today, :is_published => true, :ip => request.ip ).count
+  end
 
-   # if ip_count > 1
-   #   flash[:error] = "一天不能張貼超過一則資訊"
-   # else
- #     PublishJobService.new(@job).perform! 
-    #end
+  def verify
+    @job = Job.find_by_token(params[:id])
 
-    #redirect_to root_path
+    if @job.verified?
+      flash[:error] = "你已經驗證過了"
+      redirect_to root_path
+    else
+      @job.verify!
+      PublishJobService.new(@job).publish! 
+      flash[:notice] = "驗證通過。您的職缺已順利刊登！"
+      redirect_to job_path(@job)
+    end
   end
 
   def final
