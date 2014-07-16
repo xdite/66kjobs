@@ -20,3 +20,4 @@ production:
   <<: *defaults
   env_secret: "modify_here"
   domain: "http://66kjobs.tw"
+  disqus_shortname: "66kjobs"
