@@ -1,4 +1,4 @@
-namespace :newsper do
+namespace :newspaper do
 
   desc "sending newspaper"
   task :send_job_digest => :environment do
