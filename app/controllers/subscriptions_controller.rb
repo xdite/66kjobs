@@ -13,12 +13,14 @@ class SubscriptionsController < ApplicationController
     else
       render :new
     end
-   # if @subscription.register
-   #   redirect_to :back , :notice => "訂閱成功"
-   # else
-   #   flash[:danger] = "訂閱失敗"
-   #   render :new
-   # end
+  end
+
+  def verify
+    @subscription = EmailSubscription.find_by_token(params[:id])
+
+    @subscription.subscribe_to!("newspaper@66kjobs.tw")
+
+    redirect_to root_path , :notice => "訂閱電子報成功"
   end
 
 
