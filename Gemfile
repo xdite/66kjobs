@@ -46,6 +46,8 @@ gem "rails_admin"
 gem "seo_helper"
 gem "open_graph_helper"
 
+gem 'roadie'
+
 gem "ultra_markdown"
 
 gem 'mailgun-rails'
