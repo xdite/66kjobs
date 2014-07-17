@@ -6,6 +6,7 @@ APP_CONFIG = YAML.load(raw_config)
 require "./config/boot"
 require "bundler/capistrano"
 require "rvm/capistrano"
+require "whenever/capistrano"
 require "cape"
 
 
