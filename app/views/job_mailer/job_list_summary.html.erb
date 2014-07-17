@@ -20,8 +20,8 @@
           <td>
             <div class="digest-posts">
               <%= div_for @jobs do |job| %>
-                <%= render_job_title(job) %>
-                <%= render_job_description_for_mail(job) %>
+                <%= job.company_name %> : <%= render_job_title(job) %>
+                <%= render_explore_job_desc(job) %>
 
                 <p class="post-meta">
                   <%= render_job_salary(job.lower_bound) %> - <%= render_job_salary(job.higher_bound) %>

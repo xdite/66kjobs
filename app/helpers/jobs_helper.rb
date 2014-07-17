@@ -9,10 +9,10 @@ module JobsHelper
     sanitize(job.description.to_markdown)
   end
 
-
-
-  def render_job_description_for_mail(job)
-    truncate(sanitize(job.description.to_markdown), :length => 250 )
+  def render_explore_job_desc(job)
+    if job.og_description.present?
+      content_tag(:p, job.og_description, :class => "job-desc")
+    end
   end
 
   def render_job_apply_instruction(job)
