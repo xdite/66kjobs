@@ -65,7 +65,7 @@ class DayJob < ActiveRecord::Base
       errors.add(:lower_bound, "最高薪要超過 2200")
     end
 
-    if lower_bound.to_i > higher_bound.to_i
+    if lower_bound.to_i >= higher_bound.to_i
       errors.add(:lower_bound, "最高薪要能超過最低薪")
     end
 
