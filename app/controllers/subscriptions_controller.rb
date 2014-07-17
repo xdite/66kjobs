@@ -2,6 +2,7 @@ class SubscriptionsController < ApplicationController
 
   def new
     @subscription = EmailSubscription.new
+    set_page_title "訂閱工作速遞"
   end
 
   def create
