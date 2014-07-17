@@ -2,24 +2,27 @@
 #
 # Table name: jobs
 #
-#  id                :integer          not null, primary key
-#  title             :string(255)
-#  description       :text
-#  user_id           :integer
-#  category_id       :integer          default(1)
-#  location          :string(255)
-#  apply_instruction :text
-#  created_on        :date
-#  update_on         :date
-#  created_at        :datetime
-#  updated_at        :datetime
-#  company_name      :string(255)
-#  url               :string(255)
-#  email             :string(255)
-#  lower_bound       :integer
-#  higher_bound      :integer
-#  token             :string(255)
-#  is_published      :boolean
+#  id                 :integer          not null, primary key
+#  title              :string(255)
+#  description        :text
+#  user_id            :integer
+#  category_id        :integer          default(1)
+#  location           :string(255)
+#  apply_instruction  :text
+#  created_on         :date
+#  updated_on         :date
+#  created_at         :datetime
+#  updated_at         :datetime
+#  company_name       :string(255)
+#  url                :string(255)
+#  email              :string(255)
+#  lower_bound        :integer
+#  higher_bound       :integer
+#  token              :string(255)
+#  is_published       :boolean
+#  ip                 :string(30)
+#  email_confirmed    :boolean          default(FALSE)
+#  email_confirmed_at :datetime
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

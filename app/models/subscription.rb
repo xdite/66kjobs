@@ -8,7 +8,7 @@ class Subscription
 
   validates :email, presence: true
   validates :name, presence: true
-
+  validates :email, :email => true
 
   def register
     if valid?
