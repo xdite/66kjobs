@@ -1,0 +1,94 @@
+$link-color: hsl(220,65%,40%);
+$base-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$heading-font: "Gill Sans", Lato, sans-serif;
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+
+table.background {
+  width: 100%;
+}
+
+table.container {
+  width: 640px;
+  font-family: $base-font;
+  margin: 0 auto;
+
+  tr.header-top td {
+    background-color: rgba(0,0,0,.8);
+    color: rgba(255,255,255,.8);
+    padding: 10px 20px;
+    a{
+      color:white;
+      font-size: 28px;
+    }
+  }
+  .logdown-logo {
+    opacity: .8;
+  }
+
+  tr.header-mail td,
+  tr.mail-content td {
+    background-color: darken(white, 10%);
+  }
+
+  tr.header-mail td {
+    text-align: center;
+
+    h2 {
+      color: lighten(black, 25%);
+      font: normal 36px/40px $heading-font;
+      margin: 40px 0;
+    }
+  }
+
+  tr.mail-content > td {
+    padding: 0 40px 40px;
+  }
+
+  tr.mail-footer td {
+    color: darken(white, 50%);
+    font-size: 13px;
+    padding: 20px 0;
+  }
+}
+
+.post {
+  padding: 20px 0 10px;
+
+  & + & {
+    border-top: 1px solid darken(white, 20%);
+  }
+
+  .post-title {
+    font: 18px $heading-font;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .post-meta {
+    a { text-decoration: underline; }
+  }
+  .post-desc, .post-meta, .post-meta a {
+    color: #666;
+  }
+}
+
+.btn-read-more {
+  width: 300px;
+  background-color: darken(white, 50%);
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  text-shadow: 0 -1px 1px rgba(0,0,0,.5);
+  display: block;
+  margin: 40px auto 0;
+  border-radius: 5px;
+  box-shadow: inset 0 -2px 0 darken(white, 60%);
+}

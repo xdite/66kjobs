@@ -48,7 +48,8 @@ namespace :dev do
     job.lower_bound = 30000 
     job.higher_bound = 66000 + rand(200000)
     job.is_published = true
-
+    job.email_confirmed = true
+    job.email_confirmed_at = Time.now
 
     job.save
   end

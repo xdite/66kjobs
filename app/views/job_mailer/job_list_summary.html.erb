@@ -1,0 +1,48 @@
+<link rel="stylesheet" type="text/css" href="/assets/mailer/digest.css" />
+
+<table class="background">
+  <tr>
+    <td>
+      <table class="container">
+        <tr class="header-top">
+          <td>
+            <%= link_to(root_url) do %>
+              66K+ 工作網：工作速報
+            <% end %>
+          </td>
+        </tr>
+        <tr class="header-mail">
+          <td>
+            <h2><%= @title %></h2>
+          </td>
+        </tr>
+        <tr class="mail-content">
+          <td>
+            <div class="digest-posts">
+              <%= div_for @jobs do |job| %>
+                <%= render_job_title(job) %>
+                <%= render_job_description(job) %>
+
+                <p class="post-meta">
+                  <%= render_job_salary(job.lower_bound) %> - <%= render_job_salary(job.higher_bound) %>
+                   | <%= job.created_on.to_s(:long) %> | by <%= job.company_name %>
+                </p>
+              <% end %>
+            </div>
+           
+            <%= link_to("更多好工作 &rarr;".html_safe, root_path , :class => "btn btn-read-more") %>
+          </td>
+        </tr>
+        <tr class="mail-footer">
+          <td>
+
+            <p>
+              你會收到這封信是因為你曾經選擇訂閱 66K+ 工作網的電子報。<br>
+              想停止訂閱 <a href="%mailing_list_unsubscribe_url%">請按這裡退訂.</a>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
