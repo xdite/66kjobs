@@ -20,6 +20,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :day_jobs do 
+    collection do 
+      post :preview
+    end
+  end
+
   resources :categories
 
   resources :subscriptions do

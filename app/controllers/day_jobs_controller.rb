@@ -14,7 +14,16 @@ class DayJobsController < ApplicationController
 
   # GET /day_jobs/new
   def new
-    @day_job = DayJob.new
+    if params[:token].present?
+      @day_job = DayJob.where(:token => params[:token]).first
+
+      if @day_job.blank?
+        @day_job = DayJob.new
+      end
+
+    else
+      @day_job = DayJob.new
+    end
   end
 
   # GET /day_jobs/1/edit
