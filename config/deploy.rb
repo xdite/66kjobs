@@ -50,6 +50,9 @@ Cape do
     recipies.env['RAILS_ENV'] = rails_env
   end
 
+  mirror_rake_tasks :newspaper do |recipies|
+    recipies.env['RAILS_ENV'] = rails_env
+  end
 end
 
 namespace :deploy do
