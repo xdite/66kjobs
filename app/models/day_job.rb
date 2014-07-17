@@ -48,6 +48,27 @@ class DayJob < ActiveRecord::Base
 
 
 
-  def check_salary
+ def check_salary
+    if lower_bound.blank?
+      errors.add(:lower_bound, "最低薪水不能為空")
+    end
+
+    if higher_bound.blank?
+      errors.add(:lower_bound, "最高薪水不能為空")
+    end
+
+    if lower_bound.to_i < 1800
+      errors.add(:lower_bound, "最低薪不能低於 1800")
+    end
+
+    if higher_bound.to_i < 2200
+      errors.add(:lower_bound, "最高薪要超過 2200")
+    end
+
+    if lower_bound.to_i > higher_bound.to_i
+      errors.add(:lower_bound, "最高薪要能超過最低薪")
+    end
+
   end
+
 end
