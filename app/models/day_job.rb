@@ -30,7 +30,7 @@ class DayJob < ActiveRecord::Base
 
   include Tokenable
   include OpenGraphable
-
+  include PublishConcern
   include ActionView::Helpers::TextHelper
 
   validates :title, :presence => true
@@ -41,6 +41,12 @@ class DayJob < ActiveRecord::Base
   validates :email, :email => true
 
   validate :check_salary, fields: [:lower_bound, :higher_bound]
+
+  def og_title
+    ERB::Util.h("#{title} - #{company_name} - 最高日薪 #{higher_bound}")
+  end
+
+
 
   def check_salary
   end
