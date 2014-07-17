@@ -35,29 +35,20 @@ class Job < ActiveRecord::Base
   scope :recent, -> { order("id DESC") }
 
   include Tokenable
+  include OpenGraphable
+  include PublishConcern
   include ActionView::Helpers::TextHelper
 
   validates :title, :presence => true
   validates :description, :presence => true
   validates :location, :presence => true
   validates :apply_instruction, :presence => true
-
   validates :url, :url => true, :allow_blank => true
-
   validates :email, :email => true
 
   validate :check_salary, fields: [:lower_bound, :higher_bound]
 
 
-  def og_description
-    content = []
-    content << description if description.present?
-
-
-    str = truncate(content.first, :length => 150 )
-
-    ERB::Util.h(str)
-  end
 
   def og_title
     ERB::Util.h("#{title} - #{company_name} - 最高薪水 #{higher_bound}")
@@ -94,18 +85,4 @@ class Job < ActiveRecord::Base
 
   end
 
-  def verified?
-    email_confirmed_at.present? && email_confirmed
-  end
-
-  def verify!
-    self.email_confirmed_at = Time.now
-    self.email_confirmed = true
-    self.save
-  end
-
-  def publish!
-    self.is_published = true
-    self.save
-  end
 end

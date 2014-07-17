@@ -1,0 +1,2 @@
+module DayJobsHelper
+end

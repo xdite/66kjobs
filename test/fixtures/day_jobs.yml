@@ -1,0 +1,34 @@
+# == Schema Information
+#
+# Table name: day_jobs
+#
+#  id                 :integer          not null, primary key
+#  title              :string(255)
+#  description        :text
+#  location           :string(255)
+#  apply_instruction  :text
+#  created_on         :date
+#  updated_on         :date
+#  company_name       :string(255)
+#  url                :string(255)
+#  email              :string(255)
+#  lower_bound        :integer
+#  higher_bound       :integer
+#  token              :string(255)
+#  is_published       :boolean          default(FALSE)
+#  ip                 :string(255)
+#  email_confirmed    :boolean
+#  email_confirmed_at :datetime
+#  created_at         :datetime
+#  updated_at         :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+
+two:
+  title: MyString
+  description: MyText
