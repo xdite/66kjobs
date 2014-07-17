@@ -15,8 +15,11 @@ class JobMailer < ActionMailer::Base
   end
 
   def job_list_summary(email)
-    @jobs = Job.published.where(:created_on => (Date.today - 2.days)..Date.today ).order("id DESC").limit(20)
-    mail(:to => email, :subject => "xxx")
+    start_date = Date.today - 2.days
+    end_date = Date.today
+    @jobs = Job.published.where(:created_on => (start_date..end_date)).order("id DESC").limit(20)
+    @title = "66K+ 工作速報 : #{start_date} ~ #{end_date} "
+    mail(:to => email, :subject => @title )
   end
 
 

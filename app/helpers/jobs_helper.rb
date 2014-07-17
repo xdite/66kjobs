@@ -10,6 +10,11 @@ module JobsHelper
   end
 
 
+
+  def render_job_description_for_mail(job)
+    truncate(sanitize(job.description.to_markdown), :length => 250 )
+  end
+
   def render_job_apply_instruction(job)
     job.apply_instruction.to_markdown
   end

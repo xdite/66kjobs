@@ -7,13 +7,13 @@
         <tr class="header-top">
           <td>
             <%= link_to(root_url) do %>
-              66K+ 工作網：工作速報
+              <%= @title %>
             <% end %>
           </td>
         </tr>
         <tr class="header-mail">
           <td>
-            <h2><%= @title %></h2>
+            <h2>最新工作</h2>
           </td>
         </tr>
         <tr class="mail-content">
@@ -21,7 +21,7 @@
             <div class="digest-posts">
               <%= div_for @jobs do |job| %>
                 <%= render_job_title(job) %>
-                <%= render_job_description(job) %>
+                <%= render_job_description_for_mail(job) %>
 
                 <p class="post-meta">
                   <%= render_job_salary(job.lower_bound) %> - <%= render_job_salary(job.higher_bound) %>
