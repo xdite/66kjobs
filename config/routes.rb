@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :day_jobs
 
   mount RailsAdmin::Engine => '/xadmin', as: 'rails_admin'
   devise_for :users
@@ -21,9 +20,16 @@ Rails.application.routes.draw do
   end
 
   resources :day_jobs do 
-    collection do 
+    collection do
+      get :inform
       post :preview
+      get :search
       get :final
+    end
+
+    member do
+      post :publish
+      get :verify
     end
   end
 

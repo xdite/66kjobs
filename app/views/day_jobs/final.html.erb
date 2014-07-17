@@ -1,0 +1,44 @@
+<div class="stepwizard">
+    <div class="stepwizard-row">
+        <div class="stepwizard-step">
+          <%= link_to("1", new_day_job_path(:token => @day_job.token), :class => "btn btn-default btn-circle") %>
+      
+            <p>張貼工作內容</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-default btn-circle" disabled="disabled">2</button>
+            <p>預覽</p>
+        </div>
+        <div class="stepwizard-step">
+          <%= link_to("3", final_day_jobs_path(:token => @day_job.token ), :class => "btn btn-primary btn-circle") %>
+            <p>確定張貼</p>
+        </div> 
+    </div>
+</div>
+
+
+<div class="new-job">
+
+  <h3> STEP 3 : 確定張貼廣告 </h3>
+
+  <hr>
+
+
+<div class="well">
+
+  <ul>
+    <li> 你的日薪廣告會在本站首頁上停留十五天（從現在算起）。 </li>
+    <li> 一則廣告只允許公告一個職缺 </li>
+    <li> 我們保留將廣告徹架的權利 </li>
+    <li> 如有任何疑問，請來信 66kjobs.tw@gmail.com </li>
+  </ul>
+
+<br>
+
+  <div style="text-align:left;">
+    <%= link_to("確定刊登本廣告", publish_day_job_path(@day_job.token), :method => :post, :confirm => "Are you sure? " , :class => "btn btn-large btn-danger") %> or <%= link_to("回去做些小改動", new_day_job_path(:token => @day_job.token) , :class => "underline red" )%>
+
+  </div>
+
+
+</div>
