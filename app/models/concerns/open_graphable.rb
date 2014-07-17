@@ -13,4 +13,12 @@ module OpenGraphable
     ERB::Util.h(str)
   end
 
+  def company_human_name
+    if company_name.present?
+      company_name
+    else
+       "（匿名）"
+    end
+  end
+  
 end

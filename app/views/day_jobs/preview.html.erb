@@ -1,0 +1,45 @@
+<div class="stepwizard">
+    <div class="stepwizard-row">
+        <div class="stepwizard-step">
+          <%= link_to("1", new_day_job_path(:token => @day_job.token), :class => "btn btn-default btn-circle") %>
+      
+            <p>張貼工作內容</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-primary btn-circle" disabled="disabled">2</button>
+            <p>預覽</p>
+        </div>
+        <div class="stepwizard-step">
+          <%= link_to("3", final_day_jobs_path(:token => @day_job.token ), :class => "btn btn-default btn-circle") %>
+            <p>確定張貼</p>
+        </div> 
+    </div>
+</div>
+
+
+<div class="new-job">
+  <br><br>
+
+
+  <h3> STEP 2 : 預覽你的徵才廣告 </h3>
+
+  <div style="text-align:right;">
+    <%= link_to("看起來很不錯，繼續前進到步驟 3 ", final_day_jobs_path(:token => @day_job.token ) , :class => "btn btn-large btn-danger") %> or <%= link_to("回去做些小改動", new_day_job_path(:token => @day_job.token) , :class => "underline red" )%>
+
+  </div>
+  <hr>
+
+  <br><br>
+
+  <%= render :partial => "preview_block" %>
+
+
+  <hr>
+
+  <div style="text-align:left;">
+    <%= link_to("看起來很不錯，繼續前進到步驟 3 ", final_day_jobs_path(:token => @day_job.token ) , :class => "btn btn-large btn-danger") %> or <%= link_to("回去做些小改動", new_day_job_path(:token => @day_job.token) , :class => "underline red" )%>
+
+  </div>
+
+  <br>
+</div>

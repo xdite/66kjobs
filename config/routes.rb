@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :day_jobs do 
     collection do 
       post :preview
+      get :final
     end
   end
 
