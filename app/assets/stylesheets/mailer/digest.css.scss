@@ -60,22 +60,22 @@ table.container {
   }
 }
 
-.post {
+.job {
   padding: 20px 0 10px;
 
   & + & {
     border-top: 1px solid darken(white, 20%);
   }
 
-  .post-title {
+  .job-title {
     font: 18px $heading-font;
     margin-bottom: 10px;
     display: block;
   }
-  .post-meta {
+  .job-meta {
     a { text-decoration: underline; }
   }
-  .post-desc, .post-meta, .post-meta a {
+  .job-desc, .job-meta, .job-meta a {
     color: #666;
   }
 }
