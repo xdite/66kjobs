@@ -2,6 +2,7 @@ class DayJobsController < ApplicationController
 
   def index
     @day_jobs = DayJob.published
+    set_page_title "日薪專區"
   end
 
 
