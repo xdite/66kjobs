@@ -43,7 +43,7 @@ class DayJob < ActiveRecord::Base
   validate :check_salary, fields: [:lower_bound, :higher_bound]
 
   def og_title
-    ERB::Util.h("#{title} - #{company_name} - 最高日薪 #{higher_bound}")
+    ERB::Util.h("（日薪專區）#{title} - #{company_name} - 最高日薪 #{higher_bound}")
   end
 
 

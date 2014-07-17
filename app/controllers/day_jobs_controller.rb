@@ -1,7 +1,7 @@
 class DayJobsController < ApplicationController
 
   def index
-    @day_jobs = DayJob.all
+    @day_jobs = DayJob.published
   end
 
 

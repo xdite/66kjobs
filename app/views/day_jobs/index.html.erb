@@ -1,27 +1,7 @@
-<h1>Listing day_jobs</h1>
+<h3> 日薪專區 </h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <table class="table table-borderd">
 
-  <tbody>
-    <% @day_jobs.each do |day_job| %>
-      <tr>
-        <td><%= day_job.title %></td>
-        <td><%= day_job.description %></td>
-        <td><%= link_to 'Show', day_job %></td>
-        <td><%= link_to 'Edit', edit_day_job_path(day_job) %></td>
-        <td><%= link_to 'Destroy', day_job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <%= render :partial => "day_jobs/item", :collection => @day_jobs, :as => :job %>
 
-<br>
-
-<%= link_to 'New Day job', new_day_job_path %>
+  </table>
