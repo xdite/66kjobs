@@ -8,6 +8,7 @@ class SubscriptionsController < ApplicationController
     @subscription = EmailSubscription.new(subscription_params)
 
     if @subscription.save
+      SubscriptionMailer.confirm_email(@subscription).deliver
       redirect_to new_subscription_path , :notice => "感謝您對 66K 職缺有興趣，我們會寄送一封郵件給您確認 Email 位址。"
     else
       render :new

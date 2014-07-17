@@ -3,16 +3,16 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/xadmin', as: 'rails_admin'
   devise_for :users
   root :to => "jobs#index"
-  
-  resources :jobs do 
-    collection do 
+
+  resources :jobs do
+    collection do
       get :inform
       post :preview
       get :search
       get :final
     end
 
-    member do 
+    member do
       post :publish
       get :verify
     end
@@ -20,8 +20,12 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  resources :subscriptions
-    
+  resources :subscriptions do
+    member do
+      get :verify
+    end
+  end
+
   get "/pages/:action" , :controller => "pages"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
