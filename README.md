@@ -22,7 +22,7 @@ Development
 ## Issues
 
 
-If you have problems, please create a [Github issue](https://github.com/xdite/bootstrappers/issues).
+If you have problems, please create a [Github issue](https://github.com/xdite/66kjobs/issues).
 
 ##License
 
