@@ -1,3 +1,5 @@
+[ ![Codeship Status for xdite/66kjobs](https://codeship.io/projects/8bc6f3c0-f804-0131-618b-4abf95291133/status)](https://codeship.io/projects/28635)
+
 ## 66K 工作網
 
 ![](http://d.pr/i/7JtB+)
