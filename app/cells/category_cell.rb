@@ -6,7 +6,7 @@ class CategoryCell < Cell::Rails
 
   def jobs(args)
     @category = args[:category]
-    @jobs = @category.jobs.published.recent
+    @jobs = @category.jobs.published.recent.in_a_month
 
     render 
   end
