@@ -18,3 +18,5 @@
 //= require bootstrap/modal
 //= require bootstrap/tab
 //= require bootstrap-markdown
+//= require bootstrap/collapse
+//= require bootstrap/transition
