@@ -20,4 +20,15 @@ module ApplicationHelper
     alerts.join("\n").html_safe
   end
   
+  def nav_link(link_text, link_path)
+    class_name = if current_page?(link_path) || controller.controller_name == url_for(link_path).split('/')[1]
+      'active'
+    else
+      ''
+    end
+
+    content_tag :li, class: class_name do
+      link_to link_text, link_path
+    end
+  end
 end
