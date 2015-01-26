@@ -33,6 +33,7 @@ class Job < ActiveRecord::Base
 
   scope :published,  -> { where(:is_published => true ).where(:email_confirmed => true ) }
   scope :recent, -> { order("id DESC") }
+  scope :in_a_month,-> { where("created_on >= :date", :date => 30.days.ago) } 
 
   include Tokenable
   include OpenGraphable
