@@ -28,7 +28,7 @@ set :runner, "apps"
 set :deploy_via, :remote_cache
 set :git_shallow_clone, 1
 set :use_sudo, false
-set :rvm_ruby_string, '2.0.0'
+set :rvm_ruby_string, '2.1.2'
 
 set :whenever_command, "bundle exec whenever"
 #set :hipchat_token, APP_CONFIG["production"]["hipchat_token"]
