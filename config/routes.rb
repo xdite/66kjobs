@@ -19,19 +19,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :day_jobs do 
-    collection do
-      get :inform
-      post :preview
-      get :search
-      get :final
-    end
-
-    member do
-      post :publish
-      get :verify
-    end
-  end
 
   resources :categories
 
